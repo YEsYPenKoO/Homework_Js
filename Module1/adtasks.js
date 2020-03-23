@@ -14,9 +14,9 @@
 
 // --------1
 
-let age;
+// let age;
 
-if (age >= 14 && age <= 90);
+// if (age >= 14 && age <= 90);
 
 
 // --------2
@@ -24,14 +24,14 @@ if (age >= 14 && age <= 90);
 
 // --1
 
-let age;
+// let age;
 
-if (!(age >= 14 && age <= 90));
+// if (!(age >= 14 && age <= 90));
 
 
 // --2
 
-let age;
+// let age;
 
-if (age < 14 || age > 90);
+// if (age < 14 || age > 90);
 
