@@ -1,21 +1,11 @@
 // 'use strict'
 
-// let credits = 23580;
-// let pricePerDroid = 3000;
-// let numberOfDroids = prompt("Enter quantity Droid");
-// let totalPrice;
-// console.log(numberOfDroids);
+// let total = 0;
+// let input = (prompt('Enter first number'));
+// while (input) {
+//   input = (prompt('Enter a number'));
+//   total += input;
+//   console.log(total);
+// } ;
 
-// if(numberOfDroids === null){
-//     console.log("Declined");
-// }
-// else{
-//     totalPrice = numberOfDroids   * pricePerDroid;
-//     if(totalPrice > credits){
-//         console.log('not enought money on your count')
-//     }
-//     else{
-//         credits = credits-totalPrice;
-//         console.log(`You bought ${numberOfDroids} droids, there are ${credits} credits on your count.`)
-//     }
-//  }
+// alert(`It is ${total} in total`);
