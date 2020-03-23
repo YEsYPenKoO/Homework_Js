@@ -21,16 +21,26 @@
 // let val;
  
 // console.log(val);
+
 // val = "River";
 // console.log(isNaN (val));//true
+//console.log(typeof (val));//String
+
 // val = "Mountain";
 // console.log(isNaN (val));//true
+//console.log(typeof (val));//String
+
 // val = 232;
 // console.log(isNaN (val));//false
+//console.log(typeof (val));//Number
+
 // val = true;
 // console.log(isNaN(val));//false
+//console.log(typeof (val));//Boolean
+
 // val = null;
 // console.log(isNaN (val));//false
+//console.log(typeof (val));//Object
 
 
 // ---------------------------3
@@ -55,8 +65,8 @@
 
 // ---------------------------5
  
-// console.log(Math.max(2, 34, 99, 3, 22, 36, 733, 18));
-// console.log(Math.min(2, 34, 99, 3, 22, 36, 733, 18));
+// console.log(Math.max(2, 34, 99, 3, 22, 36, 733, 18));//733
+// console.log(Math.min(2, 34, 99, 3, 22, 36, 733, 18));//2
 
 // ---------------------------6
 

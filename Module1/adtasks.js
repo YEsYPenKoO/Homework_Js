@@ -8,15 +8,15 @@
 // if (-1 || 0) alert( 'first' );//выполняется
 // if (-1 && 0) alert( 'second' );//не выполняется
 // if (null || -1 && 1) alert( 'third' )//выполняется
-
+ 
 
 // -------------------3
 
 // --------1
 
-// let age;
+let age;
 
-// if (age >= 14 && age <= 90);
+if (age >= 14 && age <= 90);
 
 
 // --------2
@@ -24,14 +24,14 @@
 
 // --1
 
-// let age;
+let age;
 
-// if (!(age >= 14 && age <= 90));
+if (!(age >= 14 && age <= 90));
 
 
 // --2
 
-// let age;
+let age;
 
-// if (age < 14 || age > 90);
+if (age < 14 || age > 90);
 
