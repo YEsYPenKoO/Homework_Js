@@ -214,240 +214,240 @@
 //   };
 // };
 
-const counterA = createCounter();
-counterA.increment(); // 1
-counterA.increment(); // 2
-counterA.increment(); // 3
-counterA.decrement(); // 2
+// const counterA = createCounter();
+// counterA.increment(); // 1
+// counterA.increment(); // 2
+// counterA.increment(); // 3
+// counterA.decrement(); // 2
 
-const counterB = createCounter();
-counterB.increment(); // 1
-counterB.increment(); // 2
-counterB.increment(); // 3
-counterB.increment(); // 4
-counterB.increment(); // 5
-counterB.increment(); // 6
-// =============== the end =================
+// const counterB = createCounter();
+// counterB.increment(); // 1
+// counterB.increment(); // 2
+// counterB.increment(); // 3
+// counterB.increment(); // 4
+// counterB.increment(); // 5
+// counterB.increment(); // 6
+// // =============== the end =================
 
-// это способ посмотреть в консоли свойства заданного js объекта.
-console.dir(counterA);
-console.dir(counterB);
+// // это способ посмотреть в консоли свойства заданного js объекта.
+// console.dir(counterA);
+// console.dir(counterB);
 
-// ===2===
-const makeDish = function (shefName, dish) {
-  console.log(`${shefName} is cooking ${dish}`);
-};
+// // ===2===
+// const makeDish = function (shefName, dish) {
+//   console.log(`${shefName} is cooking ${dish}`);
+// };
 
-makeDish("Ilia", "apple pie"); // Ilia is cooking apple pie
-makeDish("Eva", "fish"); // Eva is cooking fish
-makeDish("Polina", "beef stew"); // Polina is cooking beef stew
+// makeDish("Ilia", "apple pie"); // Ilia is cooking apple pie
+// makeDish("Eva", "fish"); // Eva is cooking fish
+// makeDish("Polina", "beef stew"); // Polina is cooking beef stew
 
-makeDish("Vika", "muffins"); // Vika is cooking muffins
-makeDish("Yarik", "pork chops"); // Yarik is cooking pork chops
-makeDish("Andrei", "roast beef"); // Andrei is cooking roast beef
+// makeDish("Vika", "muffins"); // Vika is cooking muffins
+// makeDish("Yarik", "pork chops"); // Yarik is cooking pork chops
+// makeDish("Andrei", "roast beef"); // Andrei is cooking roast beef
 
-const makeShef = function (name) {
-  return function makeDish(dish) {
-    console.log(`${name} is cooling ${dish}`);
-  };
-};
-const kiril = makeShef("Kiril");
-kiril("cheesecake");
+// const makeShef = function (name) {
+//   return function makeDish(dish) {
+//     console.log(`${name} is cooling ${dish}`);
+//   };
+// };
+// const kiril = makeShef("Kiril");
+// kiril("cheesecake");
 
-const dima = makeShef("Dima");
-dima("pancakes");
+// const dima = makeShef("Dima");
+// dima("pancakes");
 
-// this in global environment
-// - window без "use strict" и udefined с "use strict"
+// // this in global environment
+// // - window без "use strict" и udefined с "use strict"
 
-// this in object`s methods
-// ===1===
-const petya = {
-  name: "Petya",
-  showThis() {
-    console.log(this);
-  },
-  showName() {
-    console.log(this.name);
-  },
-};
+// // this in object`s methods
+// // ===1===
+// const petya = {
+//   name: "Petya",
+//   showThis() {
+//     console.log(this);
+//   },
+//   showName() {
+//     console.log(this.name);
+//   },
+// };
 
-petya.showThis(); // {name: "Petya", showThis: ƒ, showName: ƒ}
-petya.showName(); // 'Petya'
+// petya.showThis(); // {name: "Petya", showThis: ƒ, showName: ƒ}
+// petya.showName(); // 'Petya'
 
-// ===2===
-function showThis() {
-  console.log("this in showThis: ", this);
-}
+// // ===2===
+// function showThis() {
+//   console.log("this in showThis: ", this);
+// }
 
-// Вызываем в глобальном контексте
-showThis();
-// this in showThis: Window
+// // Вызываем в глобальном контексте
+// showThis();
+// // this in showThis: Window
 
-const user = { name: "Mango" };
+// const user = { name: "Mango" };
 
-/*
- * Записываем ссылку на функцию в свойство объекта
- * Обратите внимание, что это не вызов - нет ()
- */
-user.showContext = showThis;
+// /*
+//  * Записываем ссылку на функцию в свойство объекта
+//  * Обратите внимание, что это не вызов - нет ()
+//  */
+// user.showContext = showThis;
 
-/*
- * Вызываем функцию в контексте объекта
- * this будет указывать на текущий объект, в контексте
- * которого осуществляется вызов, а не на глобальный объект.
- */
+// /*
+//  * Вызываем функцию в контексте объекта
+//  * this будет указывать на текущий объект, в контексте
+//  * которого осуществляется вызов, а не на глобальный объект.
+//  */
 
-user.showContext();
-// this in showThis: {name: "Mango", showContext: ƒ}
+// user.showContext();
+// // this in showThis: {name: "Mango", showContext: ƒ}
 
-// this in callback
-// ===1===
-const hotel = {
-  name: "Resort Hotel",
-  showThis() {
-    console.log(this);
-  },
-};
+// // this in callback
+// // ===1===
+// const hotel = {
+//   name: "Resort Hotel",
+//   showThis() {
+//     console.log(this);
+//   },
+// };
 
-const fn = function (callback) {
-  /*
-   * Во время вызова fn, callback будет ссылкой
-   * на функцию showThis объекта hotel.
-   * Ее вызов происходит в глобальном контексте,
-   * про hotel она ничего не знает.
-   * Соответственно this не будет ссылаться на hotel
-   */
-  callback();
-};
+// const fn = function (callback) {
+//   /*
+//    * Во время вызова fn, callback будет ссылкой
+//    * на функцию showThis объекта hotel.
+//    * Ее вызов происходит в глобальном контексте,
+//    * про hotel она ничего не знает.
+//    * Соответственно this не будет ссылаться на hotel
+//    */
+//   callback();
+// };
 
-// Передается ссылка на функцию а нее ее вызов
-fn(hotel.showThis); // window или undefined
+// // Передается ссылка на функцию а нее ее вызов
+// fn(hotel.showThis); // window или undefined
 
-// this in arrow function
-const showThis = () => {
-  console.log("this in showThis: ", this);
-};
+// // this in arrow function
+// const showThis = () => {
+//   console.log("this in showThis: ", this);
+// };
 
-showThis(); // this in showThis: window
+// showThis(); // this in showThis: window
 
-const user = { name: "Mango" };
-user.showContext = showThis;
+// const user = { name: "Mango" };
+// user.showContext = showThis;
 
-user.showContext(); // this in showThis: window
+// user.showContext(); // this in showThis: window
 
-// ===2===
-const hotel = {
-  name: "Resort hotel",
-  showThis() {
-    const fn = () => {
-      /*
-       * Стрелки запоминают контекст во время объявления,
-       * из родительской области видимости
-       */
-      console.log("this in fn: ", this);
-    };
+// // ===2===
+// const hotel = {
+//   name: "Resort hotel",
+//   showThis() {
+//     const fn = () => {
+//       /*
+//        * Стрелки запоминают контекст во время объявления,
+//        * из родительской области видимости
+//        */
+//       console.log("this in fn: ", this);
+//     };
 
-    fn();
-    console.log("this in showThis: ", this);
-  },
-};
+//     fn();
+//     console.log("this in showThis: ", this);
+//   },
+// };
 
-hotel.showThis();
-// this in fn: {name: 'Resort hotel', showThis: ƒ}
-// this in showThis: {name: 'Resort hotel',showThis: ƒ}
+// hotel.showThis();
+// // this in fn: {name: 'Resort hotel', showThis: ƒ}
+// // this in showThis: {name: 'Resort hotel',showThis: ƒ}
 
-// ===ES5==
-const hotel = {
-  name: "Resort hotel",
-  showThis: function showThis() {
-    /*
-     * Контекст для стрелки сохраняется
-     * и передается из внешней области видимости
-     */
-    const context = this;
+// // ===ES5==
+// const hotel = {
+//   name: "Resort hotel",
+//   showThis: function showThis() {
+//     /*
+//      * Контекст для стрелки сохраняется
+//      * и передается из внешней области видимости
+//      */
+//     const context = this;
 
-    const fn = function fn() {
-      // А тут используется
-      console.log("this in fn: ", context);
-    };
+//     const fn = function fn() {
+//       // А тут используется
+//       console.log("this in fn: ", context);
+//     };
 
-    fn();
-    console.log("this in showThis: ", this);
-  },
-};
+//     fn();
+//     console.log("this in showThis: ", this);
+//   },
+// };
 
-hotel.showThis();
-// this in fn: {name: 'Resort hotel', showThis: ƒ}
-// this in showThis: {name: 'Resort hotel',showThis: ƒ}
+// hotel.showThis();
+// // this in fn: {name: 'Resort hotel', showThis: ƒ}
+// // this in showThis: {name: 'Resort hotel',showThis: ƒ}
 
-// call & apply
-const greet = function () {
-  return `Wellcome to ${this.name} hotel!`;
-};
+// // call & apply
+// const greet = function () {
+//   return `Wellcome to ${this.name} hotel!`;
+// };
 
-const hotel = { name: "Resort Hotel" };
+// const hotel = { name: "Resort Hotel" };
 
-console.log(greet.call(hotel)); // "Wellcome to Resort Hotel!"
-console.log(greet.apply(hotel)); // "Wellcome to Resort Hotel!"
+// console.log(greet.call(hotel)); // "Wellcome to Resort Hotel!"
+// console.log(greet.apply(hotel)); // "Wellcome to Resort Hotel!"
 
-//call вызовет функцию fn передав ее this ссылку на объект obj, а также аргументы arg1, arg2 и т. д.
-const greet = function (guest, stars) {
-  return `${guest}, welcome to ${stars}-star ${this.name}!`;
-};
+// //call вызовет функцию fn передав ее this ссылку на объект obj, а также аргументы arg1, arg2 и т. д.
+// const greet = function (guest, stars) {
+//   return `${guest}, welcome to ${stars}-star ${this.name}!`;
+// };
 
-const hotel = { name: "Resort Hotel" };
-const motel = { name: "Sunlight Motel" };
+// const hotel = { name: "Resort Hotel" };
+// const motel = { name: "Sunlight Motel" };
 
-console.log(greet.call(hotel, "Mango", 5));
-// "Mango, wellcome to 5-star Resort Hotel!"
+// console.log(greet.call(hotel, "Mango", 5));
+// // "Mango, wellcome to 5-star Resort Hotel!"
 
-console.log(greet.call(motel, "Poly", 4));
-// "Poly, wellcome to 4-star Sunlight Motel!"
+// console.log(greet.call(motel, "Poly", 4));
+// // "Poly, wellcome to 4-star Sunlight Motel!"
 
-// apply полный аналог метода call за исключением того, что синтаксис
-// вызова аргументов требует не перечисление, а массив.
-const greet = function (guest, stars) {
-  return `${guest}, welcome to ${stars}-star ${this.name}!`;
-};
+// // apply полный аналог метода call за исключением того, что синтаксис
+// // вызова аргументов требует не перечисление, а массив.
+// const greet = function (guest, stars) {
+//   return `${guest}, welcome to ${stars}-star ${this.name}!`;
+// };
 
-const hotel = { name: "Resort Hotel" };
-const motel = { name: "Sunlight Motel" };
+// const hotel = { name: "Resort Hotel" };
+// const motel = { name: "Sunlight Motel" };
 
-console.log(greet.apply(hotel, ["Mango", 5]));
-// "Mango, wellcome to 5-star Resort Hotel!"
+// console.log(greet.apply(hotel, ["Mango", 5]));
+// // "Mango, wellcome to 5-star Resort Hotel!"
 
-console.log(greet.apply(motel, ["Poly", 4]));
-// "Poly, wellcome to 4-star Sunlight Motel!"
+// console.log(greet.apply(motel, ["Poly", 4]));
+// // "Poly, wellcome to 4-star Sunlight Motel!"
 
-// bind
-// bind создает копию функции fn с привязанным контекстом obj
-// и аргументами arg1, arg2 и так дале, после чего возвращает
-// ее как результат своей работы. В результате мы получаем копию
-// функции с привязанным контекстом, которую можно передать куда
-// угодно и вызвать когда угодно.
-const greet = function (guest) {
-  return `${guest}, welcome to ${this.name}!`;
-};
+// // bind
+// // bind создает копию функции fn с привязанным контекстом obj
+// // и аргументами arg1, arg2 и так дале, после чего возвращает
+// // ее как результат своей работы. В результате мы получаем копию
+// // функции с привязанным контекстом, которую можно передать куда
+// // угодно и вызвать когда угодно.
+// const greet = function (guest) {
+//   return `${guest}, welcome to ${this.name}!`;
+// };
 
-const hotel = { name: "Resort Hotel" };
+// const hotel = { name: "Resort Hotel" };
 
-const hotelGreeter = greet.bind(hotel, "Mango");
+// const hotelGreeter = greet.bind(hotel, "Mango");
 
-hotelGreeter(); // "Mango, wellcome to Resort Hotel!"
+// hotelGreeter(); // "Mango, wellcome to Resort Hotel!"
 
-// Чаще всего метод bind используется для привязки контекста при передаче
-// методов объекта как функций обратного вызова.
-const hotel = {
-  name: "Resort Hotel",
-  showThis() {
-    console.log(this);
-  },
-};
+// // Чаще всего метод bind используется для привязки контекста при передаче
+// // методов объекта как функций обратного вызова.
+// const hotel = {
+//   name: "Resort Hotel",
+//   showThis() {
+//     console.log(this);
+//   },
+// };
 
-const fn = function (callback) {
-  callback();
-};
+// const fn = function (callback) {
+//   callback();
+// };
 
-// Передаем копию метода showThis с контекстом привязанным к hotel
-fn(hotel.showThis.bind(hotel)); // {name: "Resort Hotel", showThis: ƒ}
+// // Передаем копию метода showThis с контекстом привязанным к hotel
+// fn(hotel.showThis.bind(hotel)); // {name: "Resort Hotel", showThis: ƒ}

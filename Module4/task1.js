@@ -35,7 +35,7 @@
 
 
 // const inventory = {
-//     items: ["Knife", "Gas mask"],
+//     items: ['Knife', 'Gas mask'],
 //     add(itemName) {
 //       console.log(`Adding ${itemName} to inventory`);
   
@@ -52,7 +52,7 @@
 //     action(itemName);
 //   };
   
-//   invokeInventoryAction("Medkit", inventory.add.bind(inventory));
+//   invokeInventoryAction('Medkit', inventory.add.bind(inventory));
 //   // Invoking action on Medkit
 //   // Adding Medkit to inventory
   
