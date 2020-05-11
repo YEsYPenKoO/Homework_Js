@@ -10,8 +10,8 @@
 //     premium: true,
 //   };
 
-// user.mood = "happy";
-// user.hobby = "coding";
+// user.mood = 'happy';
+// user.hobby = 'coding';
 // user.premium = false;
 
 
@@ -34,8 +34,8 @@
 // }
 
 // console.log(countProps({})); // 0
-// console.log(countProps({ name: "Mango", age: 2 })); //2
-// console.log(countProps({ mail: "poly@mail.com", isOnline: true, score: 500 })); //3
+// console.log(countProps({ name: 'Mango', age: 2 })); //2
+// console.log(countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 })); //3
 
 //--------------------3
 
@@ -46,25 +46,23 @@
 //     totalCount += count;
 //   }
 //   return totalCount;
-// }
-// console.log(countTotalSalary({})); // 0
+//   }
 
- 
-
+// console.log(countTotalSalary({})); //0
 
 // console.log(
 //   countTotalSalary({
 //     mango: 100,
 //     poly: 150,
 //     alfred: 80,
-//   }) ); // 330
+//   }) ); //330
 
 // console.log(
 //   countTotalSalary({
 //     kiwi: 200,
 //     lux: 50,
 //     chelsy: 150,
-//   }) ); // 400
+//   }) ); //400
 
 
 //--------------------4
