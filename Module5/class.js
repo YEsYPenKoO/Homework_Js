@@ -63,8 +63,9 @@ class Hero_4 {
     this.name = name;
     this.xp = xp;
   }
-  
+
   // записывает
+
   set qwe(newName) {
     this.name = newName;
     console.log(this.name);
@@ -75,6 +76,7 @@ class Hero_4 {
   //   }
 
   // читает
+
   get qwe() {
     return console.log(this.name);
   }
@@ -82,6 +84,7 @@ class Hero_4 {
   //     return console.log(this.name);
   //   }
 }
+
 const newHero_4 = new Hero_4("Sonia", 1000);
 console.log(newHero_4);
 
