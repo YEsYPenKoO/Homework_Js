@@ -30,7 +30,7 @@
 //
 // const countProps = function(obj) {
 // const arrCountProps = Object.keys(obj).length;
-// console.log(arrCountProps);
+// return
 // }
 
 // console.log(countProps({})); // 0
