@@ -1,4 +1,4 @@
-// 'use strict'
+  // 'use strict'
 
 // const Account = function(login, email){
 //   this.login = login;
