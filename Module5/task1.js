@@ -1,13 +1,12 @@
-  // 'use strict'
+// 'use strict'
 
 // const Account = function(login, email){
-//   this.login = login;
-//   this.email = email;
+//  this.login = login;
+//  this.email = email;
 // }
 // Account.prototype.getInfo = function(){
-//     returnLogin: ${this.email}, Email: ${this.login}`;
+//  returnLogin: ${this.email}, Email: ${this.login}`;
 // }
-
 
 // console.log(Account.prototype.getInfo); //function
 // const mango = new Account('Mangozedog', 'mango@dog.woof');
