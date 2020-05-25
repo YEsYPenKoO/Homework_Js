@@ -231,7 +231,7 @@ button {
 
 .navigation-btn.active {
     color: #fff;
-    background-color: #2196f3;
+    background-color: crimson;
 }
 
 
@@ -246,4 +246,20 @@ button {
         flex-flow: column wrap;
         justify-content: space-evenly;
     }
+}
+
+
+.newBtn {
+    color: pink;
+}
+
+.modalGreet {
+    display: flex;
+    margin: 0 auto;
+    flex-flow: column;
+    align-items: center;
+    font-size: 30px;
+    border: 30px solid;
+    text-align: center;
+    padding: 50%;
 }
